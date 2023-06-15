@@ -1,6 +1,6 @@
 <?php
 
-define('BASEURL', 'http://localhost/mvc6-assets/public');
+define('BASEURL', 'http://localhost/mvc69-ebisnis/public');
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');

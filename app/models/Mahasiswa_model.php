@@ -20,4 +20,25 @@ class Mahasiswa_model
     $this->db->bind('id', $id);
     return $this->db->single();
   }
+  public function tambahDataMahasiswa()
+  {
+    $query = "INSERT INTO mahasiswa
+                VALUES
+              ('', :nama, :nim, :email, :prodi)";
+    $this->db->query($query);
+    $this->db->bind('nama', $_POST['nama']);
+    $this->db->bind('nim', $_POST['nim']);
+    $this->db->bind('email', $_POST['email']);
+    $this->db->bind('prodi', $_POST['prodi']);
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+  public function hapusDataMahasiswa($id)
+  {
+    $query = "DELETE FROM mahasiswa WHERE id=:id";
+    $this->db->query($query);
+    $this->db->bind('id', $id);
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
 }
